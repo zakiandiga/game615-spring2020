@@ -9,7 +9,7 @@ public class PaddleMovement : MonoBehaviour
     public float paddleSpeed = 1f;
     public float leftEdge = -2.43f;
     public float rightEdge = 2.43f;
-    public float deviation = 200f;
+    public float deviation = 400f;
 
     void Start()
     {
