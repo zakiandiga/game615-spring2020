@@ -9,10 +9,11 @@ public class PaddleMovement : MonoBehaviour
     public float paddleSpeed = 1f;
     public float leftEdge = -2.43f;
     public float rightEdge = 2.43f;
+    public float deviation = 200f;
 
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -27,11 +28,16 @@ public class PaddleMovement : MonoBehaviour
             transform.position = new Vector3(transform.position.x + paddleSpeed, transform.position.y, 0);
         }
     }
+
+    void OnCollisionEnter(Collision col)
+    {
+        foreach (ContactPoint contact in col.contacts)
+        {
+            if (contact.thisCollider == GetComponent<BoxCollider>())
+            {
+                float calc = contact.point.x - transform.position.x;
+                contact.otherCollider.GetComponent<Rigidbody>().AddForce(deviation * calc, 0, 0);
+            }
+        }
+    }
 }
-
-
-
-
-        //if (Input.GetKey(upKey) && transform.position.y< 3.5f)
-      //  {
-       //     transform.position = new Vector3(transform.position.x, transform.position.y + paddleSpeed, 0);
