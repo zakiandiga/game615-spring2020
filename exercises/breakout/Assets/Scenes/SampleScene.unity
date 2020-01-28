@@ -167,6 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8d73e870810fb8479935376a117aeb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blockDestroy: {fileID: 0}
 --- !u!65 &48204737
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -366,6 +367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8d73e870810fb8479935376a117aeb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blockDestroy: {fileID: 1113703167}
 --- !u!54 &258723819
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -488,6 +490,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8d73e870810fb8479935376a117aeb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blockDestroy: {fileID: 1113703167}
 --- !u!54 &406574375
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -610,6 +613,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8d73e870810fb8479935376a117aeb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blockDestroy: {fileID: 1113703167}
 --- !u!54 &478927686
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -809,6 +813,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8d73e870810fb8479935376a117aeb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blockDestroy: {fileID: 1113703167}
 --- !u!54 &636802452
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1114,6 +1119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8d73e870810fb8479935376a117aeb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blockDestroy: {fileID: 1113703167}
 --- !u!54 &895797285
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1236,6 +1242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8d73e870810fb8479935376a117aeb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blockDestroy: {fileID: 1113703167}
 --- !u!54 &914529303
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1358,6 +1365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8d73e870810fb8479935376a117aeb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blockDestroy: {fileID: 1113703167}
 --- !u!54 &950148386
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1563,6 +1571,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8d73e870810fb8479935376a117aeb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blockDestroy: {fileID: 1113703167}
 --- !u!54 &963418374
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1683,6 +1692,53 @@ Transform:
   - {fileID: 636802450}
   m_Father: {fileID: 0}
   m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1113703166
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1113703168}
+  - component: {fileID: 1113703167}
+  m_Layer: 0
+  m_Name: GManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1113703167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1113703166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 847cc25666e9f5c45a6dd318e4c0b270, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifePoints: 3
+  blocks: 15
+  gameover: 0
+  win: 0
+--- !u!4 &1113703168
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1113703166}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8.906722, y: -4.567376, z: -204.86546}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1166955596
 GameObject:
@@ -1909,6 +1965,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8d73e870810fb8479935376a117aeb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blockDestroy: {fileID: 1113703167}
 --- !u!54 &1196432076
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2031,6 +2088,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8d73e870810fb8479935376a117aeb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blockDestroy: {fileID: 1113703167}
 --- !u!54 &1365811353
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2245,6 +2303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8d73e870810fb8479935376a117aeb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blockDestroy: {fileID: 1113703167}
 --- !u!54 &1610365434
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2729,6 +2788,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8d73e870810fb8479935376a117aeb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blockDestroy: {fileID: 1113703167}
 --- !u!54 &1800612378
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2851,6 +2911,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8d73e870810fb8479935376a117aeb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blockDestroy: {fileID: 1113703167}
 --- !u!54 &1808374795
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2942,7 +3003,7 @@ GameObject:
   - component: {fileID: 1899522362}
   m_Layer: 0
   m_Name: Ball
-  m_TagString: Untagged
+  m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3036,6 +3097,7 @@ MonoBehaviour:
   IsRunning: 0
   magnitudeMod: 200
   xforceMod: 0
+  progress: {fileID: 1113703167}
 --- !u!54 &1899522363
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3099,6 +3161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8d73e870810fb8479935376a117aeb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blockDestroy: {fileID: 1113703167}
 --- !u!54 &1996426379
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3221,6 +3284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8d73e870810fb8479935376a117aeb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blockDestroy: {fileID: 1113703167}
 --- !u!54 &2133122114
 Rigidbody:
   m_ObjectHideFlags: 0
