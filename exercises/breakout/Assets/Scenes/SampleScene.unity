@@ -254,6 +254,7 @@ GameObject:
   - component: {fileID: 189446203}
   - component: {fileID: 189446205}
   - component: {fileID: 189446204}
+  - component: {fileID: 189446206}
   m_Layer: 5
   m_Name: lifepoints
   m_TagString: Untagged
@@ -320,6 +321,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 189446202}
   m_CullTransparentMesh: 0
+--- !u!114 &189446206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 189446202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a712a19fef80194fb0c78de5f34805b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lPoints: 3
 --- !u!1 &258723816
 GameObject:
   m_ObjectHideFlags: 0
@@ -1726,6 +1740,7 @@ MonoBehaviour:
   blocks: 15
   gameover: 0
   win: 0
+  lp: {fileID: 189446206}
 --- !u!4 &1113703168
 Transform:
   m_ObjectHideFlags: 0
@@ -3098,6 +3113,8 @@ MonoBehaviour:
   magnitudeMod: 200
   xforceMod: 0
   progress: {fileID: 1113703167}
+  player: {fileID: 1899522357}
+  parent: {fileID: 1187253264}
 --- !u!54 &1899522363
 Rigidbody:
   m_ObjectHideFlags: 0

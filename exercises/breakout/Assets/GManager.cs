@@ -8,17 +8,27 @@ public class GManager : MonoBehaviour
     public int blocks = 15;
     public bool gameover;
     public bool win;
+    public lifepoints lp;
     
 
-    // Start is called before the first frame update
     void Start()
     {
-        
+        lp = GameObject.Find("lifepoints").GetComponent<lifepoints>();
     }
 
-    // Update is called once per frame
+
     void Update()
     {
+        lp.lPoints = lifePoints;
+
+        if (lifePoints < 1)
+        {
+            gameover = true;
+        }
         
+        if (blocks < 1)
+        {
+            win = true;
+        }
     }
 }
