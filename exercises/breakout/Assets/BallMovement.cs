@@ -11,6 +11,9 @@ public class BallMovement : MonoBehaviour
     public GManager progress;
     public GameObject player;
     public Transform parent;
+    
+    public GameObject lose; //not used yet
+    public GameObject win;  //not used yet
 
 
     void launchball()

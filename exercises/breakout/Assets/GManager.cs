@@ -6,9 +6,9 @@ public class GManager : MonoBehaviour
 {
     public int lifePoints = 3;
     public int blocks = 15;
-    public bool gameover;
-    public bool win;
     public lifepoints lp;
+    public GameObject go;
+    public GameObject youwin;
     
 
     void Start()
@@ -23,12 +23,12 @@ public class GManager : MonoBehaviour
 
         if (lifePoints < 1)
         {
-            gameover = true;
+            go.SetActive(true);
         }
         
         if (blocks < 1)
         {
-            win = true;
+            youwin.SetActive(true);
         }
     }
 }

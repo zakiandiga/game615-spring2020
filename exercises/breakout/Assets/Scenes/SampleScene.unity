@@ -715,7 +715,7 @@ GameObject:
   - component: {fileID: 542761999}
   - component: {fileID: 542761998}
   m_Layer: 5
-  m_Name: Finish
+  m_Name: Win
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -753,7 +753,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1741,6 +1741,8 @@ MonoBehaviour:
   gameover: 0
   win: 0
   lp: {fileID: 189446206}
+  go: {fileID: 1693085110}
+  youwin: {fileID: 542761996}
 --- !u!4 &1113703168
 Transform:
   m_ObjectHideFlags: 0
@@ -2637,7 +2639,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3115,6 +3117,8 @@ MonoBehaviour:
   progress: {fileID: 1113703167}
   player: {fileID: 1899522357}
   parent: {fileID: 1187253264}
+  lose: {fileID: 0}
+  win: {fileID: 0}
 --- !u!54 &1899522363
 Rigidbody:
   m_ObjectHideFlags: 0
