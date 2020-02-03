@@ -27,6 +27,9 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 438fe7f... Revert "Revert "Update CurrentLayout-default.dwlt""
 =======
 >>>>>>> parent of 438fe7f... Revert "Revert "Update CurrentLayout-default.dwlt""
 =======
@@ -40,12 +43,15 @@ MonoBehaviour:
 >>>>>>> parent of 5752e7c... Update CurrentLayout-default.dwlt
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   m_MinSize: {x: 950, y: 300}
 >>>>>>> parent of 5752e7c... Update CurrentLayout-default.dwlt
 =======
   m_MinSize: {x: 950, y: 394}
 >>>>>>> parent of 35938f4... angry pig 1st commit
+=======
+>>>>>>> parent of 438fe7f... Revert "Revert "Update CurrentLayout-default.dwlt""
 =======
 >>>>>>> parent of 438fe7f... Revert "Revert "Update CurrentLayout-default.dwlt""
 =======
@@ -170,8 +176,12 @@ MonoBehaviour:
   controlID: 61
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> parent of 5752e7c... Update CurrentLayout-default.dwlt
 =======
+=======
+>>>>>>> parent of 5752e7c... Update CurrentLayout-default.dwlt
+>>>>>>> parent of 438fe7f... Revert "Revert "Update CurrentLayout-default.dwlt""
 =======
 >>>>>>> parent of 438fe7f... Revert "Revert "Update CurrentLayout-default.dwlt""
 >>>>>>> parent of 5752e7c... Update CurrentLayout-default.dwlt
@@ -217,8 +227,12 @@ MonoBehaviour:
   controlID: 62
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> parent of 5752e7c... Update CurrentLayout-default.dwlt
 =======
+=======
+>>>>>>> parent of 5752e7c... Update CurrentLayout-default.dwlt
+>>>>>>> parent of 438fe7f... Revert "Revert "Update CurrentLayout-default.dwlt""
 =======
 >>>>>>> parent of 438fe7f... Revert "Revert "Update CurrentLayout-default.dwlt""
 >>>>>>> parent of 5752e7c... Update CurrentLayout-default.dwlt
@@ -265,8 +279,12 @@ MonoBehaviour:
   controlID: 63
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> parent of 5752e7c... Update CurrentLayout-default.dwlt
 =======
+=======
+>>>>>>> parent of 5752e7c... Update CurrentLayout-default.dwlt
+>>>>>>> parent of 438fe7f... Revert "Revert "Update CurrentLayout-default.dwlt""
 =======
 >>>>>>> parent of 438fe7f... Revert "Revert "Update CurrentLayout-default.dwlt""
 >>>>>>> parent of 5752e7c... Update CurrentLayout-default.dwlt
@@ -322,9 +340,15 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    width: 860
+    height: 611
+>>>>>>> parent of 438fe7f... Revert "Revert "Update CurrentLayout-default.dwlt""
 =======
 >>>>>>> parent of 438fe7f... Revert "Revert "Update CurrentLayout-default.dwlt""
 =======
+<<<<<<< HEAD
 >>>>>>> parent of 438fe7f... Revert "Revert "Update CurrentLayout-default.dwlt""
     width: 860
 =======
@@ -332,6 +356,8 @@ MonoBehaviour:
 >>>>>>> parent of 35938f4... angry pig 1st commit
     height: 611
 =======
+=======
+>>>>>>> parent of 438fe7f... Revert "Revert "Update CurrentLayout-default.dwlt""
     width: 838
     height: 620
 >>>>>>> parent of 5752e7c... Update CurrentLayout-default.dwlt
@@ -364,6 +390,13 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    x: 1158
+    y: 0
+    width: 330
+    height: 611
+>>>>>>> parent of 438fe7f... Revert "Revert "Update CurrentLayout-default.dwlt""
 =======
 >>>>>>> parent of 438fe7f... Revert "Revert "Update CurrentLayout-default.dwlt""
 =======
@@ -373,12 +406,15 @@ MonoBehaviour:
     x: 1129
 >>>>>>> parent of 35938f4... angry pig 1st commit
     y: 0
+<<<<<<< HEAD
     width: 359
     height: 611
 <<<<<<< HEAD
 =======
     x: 1139
     y: 0
+=======
+>>>>>>> parent of 438fe7f... Revert "Revert "Update CurrentLayout-default.dwlt""
     width: 362
     height: 620
 >>>>>>> parent of 5752e7c... Update CurrentLayout-default.dwlt
@@ -492,6 +528,9 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 438fe7f... Revert "Revert "Update CurrentLayout-default.dwlt""
 =======
 >>>>>>> parent of 438fe7f... Revert "Revert "Update CurrentLayout-default.dwlt""
 =======
@@ -553,6 +592,9 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 438fe7f... Revert "Revert "Update CurrentLayout-default.dwlt""
 =======
 >>>>>>> parent of 438fe7f... Revert "Revert "Update CurrentLayout-default.dwlt""
 =======
@@ -575,6 +617,7 @@ MonoBehaviour:
 >>>>>>> parent of 5752e7c... Update CurrentLayout-default.dwlt
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
       width: 360
       height: 584
@@ -591,6 +634,8 @@ MonoBehaviour:
 >>>>>>> parent of 438fe7f... Revert "Revert "Update CurrentLayout-default.dwlt""
 =======
 >>>>>>> parent of 438fe7f... Revert "Revert "Update CurrentLayout-default.dwlt""
+=======
+>>>>>>> parent of 438fe7f... Revert "Revert "Update CurrentLayout-default.dwlt""
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
@@ -603,6 +648,9 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 438fe7f... Revert "Revert "Update CurrentLayout-default.dwlt""
 =======
 >>>>>>> parent of 438fe7f... Revert "Revert "Update CurrentLayout-default.dwlt""
 =======
@@ -635,6 +683,9 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 438fe7f... Revert "Revert "Update CurrentLayout-default.dwlt""
 =======
 >>>>>>> parent of 438fe7f... Revert "Revert "Update CurrentLayout-default.dwlt""
 =======
@@ -648,12 +699,15 @@ MonoBehaviour:
 >>>>>>> parent of 5752e7c... Update CurrentLayout-default.dwlt
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   m_LastWindowPixelSize: {x: 360, y: 601}
 >>>>>>> parent of 5752e7c... Update CurrentLayout-default.dwlt
 =======
   m_LastWindowPixelSize: {x: 357, y: 592}
 >>>>>>> parent of 35938f4... angry pig 1st commit
+=======
+>>>>>>> parent of 438fe7f... Revert "Revert "Update CurrentLayout-default.dwlt""
 =======
 >>>>>>> parent of 438fe7f... Revert "Revert "Update CurrentLayout-default.dwlt""
 =======
@@ -697,6 +751,9 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 438fe7f... Revert "Revert "Update CurrentLayout-default.dwlt""
 =======
 >>>>>>> parent of 438fe7f... Revert "Revert "Update CurrentLayout-default.dwlt""
 =======
@@ -716,6 +773,7 @@ MonoBehaviour:
 >>>>>>> parent of 5752e7c... Update CurrentLayout-default.dwlt
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
       m_SelectedIDs: ea300000
       m_LastClickedID: 12522
@@ -726,6 +784,8 @@ MonoBehaviour:
       m_LastClickedID: 12528
       m_ExpandedIDs: 76fbffff6e300000b8300000
 >>>>>>> parent of 35938f4... angry pig 1st commit
+=======
+>>>>>>> parent of 438fe7f... Revert "Revert "Update CurrentLayout-default.dwlt""
 =======
 >>>>>>> parent of 438fe7f... Revert "Revert "Update CurrentLayout-default.dwlt""
 =======
@@ -1066,6 +1126,9 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 438fe7f... Revert "Revert "Update CurrentLayout-default.dwlt""
 =======
 >>>>>>> parent of 438fe7f... Revert "Revert "Update CurrentLayout-default.dwlt""
 =======
@@ -1073,10 +1136,17 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
 =======
+<<<<<<< HEAD
     m_SelectedInstanceIDs: 60300000
     m_LastClickedInstanceID: 12384
 >>>>>>> parent of 35938f4... angry pig 1st commit
     m_HadKeyboardFocusLastEvent: 1
+=======
+    m_SelectedInstanceIDs: be2f0000
+    m_LastClickedInstanceID: 12222
+    m_HadKeyboardFocusLastEvent: 0
+>>>>>>> parent of 5752e7c... Update CurrentLayout-default.dwlt
+>>>>>>> parent of 438fe7f... Revert "Revert "Update CurrentLayout-default.dwlt""
 =======
     m_SelectedInstanceIDs: be2f0000
     m_LastClickedInstanceID: 12222
