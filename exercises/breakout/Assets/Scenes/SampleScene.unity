@@ -312,7 +312,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Life: 3'
+  m_Text: Life = 3
 --- !u!222 &189446205
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1738,6 +1738,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifePoints: 3
   blocks: 15
+  gameover: 0
+  win: 0
   lp: {fileID: 189446206}
   go: {fileID: 1693085110}
   youwin: {fileID: 542761996}
