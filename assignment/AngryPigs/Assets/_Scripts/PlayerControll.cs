@@ -8,24 +8,12 @@ public class PlayerControll : MonoBehaviour
     public GameObject piggy;
     public float power = 50f;
     private Rigidbody2D piggyBody;
-    public gm gameManager;
-
-
-
-    //private float cameraZ;
-    //private Camera cameraPos;
-
     // Start is called before the first frame update
     void Start()
     {
         piggyBody = piggy.GetComponent<Rigidbody2D>();
         piggyBody.gravityScale = 0;
-        //cameraPos = GetComponent<Camera>();
-
-            
     }
-
-
 
     void Launch()
     {
@@ -34,17 +22,7 @@ public class PlayerControll : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (cameraPos.transform.position.z < 0)
-        //{
-        //    cameraZ = 0;
-        //}
-        //else
-        //{
-        //    cameraZ = cameraPos.transform.position.z;
-        //}
-
         // mouse point on screen is read from Input and by moving to 0 on z axis from the camera position
-        // Do something to prevent canon rotating up when the cursor goes below the canon!!!!!!
         Vector3 mousePointOnScreen = new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z);
 
         Vector3 mouseInWorld = Camera.main.ScreenToWorldPoint(mousePointOnScreen);
@@ -61,13 +39,11 @@ public class PlayerControll : MonoBehaviour
 
         transform.rotation = Quaternion.Euler(0, 0, alpha*Mathf.Rad2Deg);
 
-        if (Input.GetKey(Fire) && piggy.transform.parent) 
+        if (Input.GetKey(Fire)) 
         {
             piggy.transform.parent = null;
             piggyBody.gravityScale = 1;
             piggyBody.AddForce(direction * power);
-            gameManager.shotAttempt--;
-            //gameManager.downLife();
             Launch();
         }
 
