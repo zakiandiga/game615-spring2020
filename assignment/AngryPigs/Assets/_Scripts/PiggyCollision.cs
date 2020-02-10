@@ -5,7 +5,7 @@ using UnityEngine;
 public class PiggyCollision : MonoBehaviour
 {
 public ScoreManager scoreManager;
-const int resetTime = 3;
+const int resetTime = 6;
 Vector3 originalPosition;
 Transform parent;
 
