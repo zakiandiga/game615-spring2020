@@ -7,7 +7,8 @@ public class ScoreManager : MonoBehaviour
     public int Score = 0;
     const int PiggyHitStructure = 1;
     const int StructureHitStructure = 2;
-    const int PiggyHitBird = 5
+    const int EnemyDeadScore = 5;
+    public GameObject ScoreBoard;
 
     // Start is called before the first frame update
     public int getScore()
@@ -25,9 +26,9 @@ public class ScoreManager : MonoBehaviour
         Score = Score + StructureHitStructure;
     }
 
-    public void PiggyBird()
+    public void EnemyDead()
     {
-        Score = Score + PiggyHitBird;
+        Score = Score + EnemyDeadScore;
     }
 
 }    

@@ -9,6 +9,7 @@ public class PlayerControll : MonoBehaviour
     public float power = 50f;
     private Rigidbody2D piggyBody;
     public gm gameManager;
+    private BoxCollider2D piggyCollide;
 
 
 
@@ -20,6 +21,7 @@ public class PlayerControll : MonoBehaviour
     {
         piggyBody = piggy.GetComponent<Rigidbody2D>();
         piggyBody.gravityScale = 0;
+        piggyCollide = piggy.GetComponent<BoxCollider2D>();
         //cameraPos = GetComponent<Camera>();
 
             
@@ -66,6 +68,8 @@ public class PlayerControll : MonoBehaviour
             piggy.transform.parent = null;
             piggyBody.gravityScale = 1;
             piggyBody.AddForce(direction * power);
+            piggyCollide.enabled = true;  //THIS activate the piggy's collider!
+            //piggyCollide.SetActive;
             gameManager.shotAttempt--;
             //gameManager.downLife();
             Launch();
