@@ -5,14 +5,13 @@ using UnityEngine;
 public class PiggyCollision : MonoBehaviour
 {
     public ScoreManager scoreManager;
+    public gm gameManager;
     const int resetTime = 8;
     const int exploTime = 4;
     Vector3 originalPosition;
     Transform parent;
     public Transform Explosion;
-    bool isExploding = false;
-
-    //Transform Explosion;
+    bool isExploding = false;    
     public GameObject PiggyExplosion;
 
 
@@ -25,11 +24,13 @@ public class PiggyCollision : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Invoke("ResetPiggy", resetTime);
+        
 
         if (isExploding == false)
         {
             Invoke("PiggyExplode", exploTime);
+            Invoke("ResetPiggy", resetTime);
+
             isExploding = true;
         }
         
@@ -38,7 +39,7 @@ public class PiggyCollision : MonoBehaviour
         if (collision.gameObject.tag != "Floor")
         {
             scoreManager.PiggyStructure();
-            //Debug.Log("Current score: " + scoreManager.getScore.ToString());
+            
         }
     }
 
@@ -52,17 +53,19 @@ public class PiggyCollision : MonoBehaviour
         PiggyExplosion.SetActive(false);
         transform.parent = parent;
         transform.localPosition = originalPosition;
+        gameManager.shotAttempt--;  //Shot attempt spent!
         //Camera.main.GetComponent<CameraFollow>().resetCameraPosition();
         isExploding = false;
     }
 
     void PiggyExplode()
     {
-        Debug.Log("explosion activated!");
+        //Debug.Log("explosion activated!");
         PiggyExplosion.SetActive(true);
         Instantiate(Explosion, transform.position, Quaternion.identity);
         gameObject.SetActive(false);
+        //gameManager.shotAttempt--;
     }
 
 }
-//ASK KRYSTOF ABOUT PIG RUN THROUGH COLLISION
+//Ask about piggies run through small collision 

@@ -1,16 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
     public int Score = 0;
-    const int PiggyHitStructure = 1;
-    const int StructureHitStructure = 2;
-    const int EnemyDeadScore = 5;
-    public GameObject ScoreBoard;
+    const int PiggyHitStructure = 9;
+    const int StructureHitStructure = 7;
+    const int EnemyDeadScore = 50;
+    public Text scoreTotal;
 
-    // Start is called before the first frame update
+
+
+    void Start()
+    {
+        
+    }
+
+    void Update()
+    {
+        scoreTotal.text = "Score " + Score;
+    }
     public int getScore()
     {
         return Score;
@@ -19,6 +30,7 @@ public class ScoreManager : MonoBehaviour
     public void PiggyStructure()
     {
         Score = Score + PiggyHitStructure;
+
     }
 
     public void StructureStructure()
@@ -29,6 +41,7 @@ public class ScoreManager : MonoBehaviour
     public void EnemyDead()
     {
         Score = Score + EnemyDeadScore;
+        //Debug.Log("Score update +" + EnemyDeadScore);
     }
 
 }    

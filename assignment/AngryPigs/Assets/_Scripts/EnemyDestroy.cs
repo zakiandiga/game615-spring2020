@@ -29,19 +29,12 @@ public class EnemyDestroy : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        HP--;
-        //if (HP <1)
-        //if (col.gameObject.name == "Player")
-        //{
-        //    enemyCount.enemyCount--;
-        //    Destroy(gameObject,3);
-        //}
-            
+        HP--;          
     }
 
     void EnemyExplode()
     {
-        Debug.Log("Bird explosion activated!");
+        //Debug.Log("Bird explosion activated!");
         EnemyExplosion.SetActive(true);
         Instantiate(Explosion, transform.position, Quaternion.identity, transform.parent);
         //gameObject.SetActive(false);

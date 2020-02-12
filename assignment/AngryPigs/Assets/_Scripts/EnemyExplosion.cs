@@ -11,15 +11,16 @@ public class EnemyExplosion : MonoBehaviour
     void Start()
     {
         Physics2D.IgnoreCollision(Enemy.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+        scoreManager.EnemyDead();
+        //Debug.Log("Score added:" + scoreManager.getScore());
+        Destroy(gameObject, desTime);
+        Destroy(Enemy);
     }
 
 
     void Update()
     {
-        scoreManager.EnemyDead();
-        //Debug.Log("Score added:" + scoreManager.getScore());
-        Destroy(gameObject, desTime);
-        Destroy(Enemy);
+
 
     }
 
