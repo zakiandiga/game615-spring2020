@@ -9,7 +9,7 @@ public class CameraFollow : MonoBehaviour
     public Camera cam;
     public float ZoomA = 5f;
     public float ZoomB = 8f;
-    public float ZoomT = 0f;
+    public float ZoomT = 0.1f;
     bool isOpening = true;
     //public Transform came;
     //public float smoothT = 0.3f;
@@ -52,7 +52,7 @@ public class CameraFollow : MonoBehaviour
         {
             Vector3 newPosition = new Vector3(piggy.position.x, transform.position.y, transform.position.z);
             transform.position = Vector3.Lerp(transform.position, newPosition,Time.deltaTime);
-            float t =+ ZoomT;
+            float t = ZoomT;
             cam.orthographicSize = Mathf.SmoothStep(ZoomA, ZoomB, t);  //Camera doesn't gradually zoom!!
         }
         else
