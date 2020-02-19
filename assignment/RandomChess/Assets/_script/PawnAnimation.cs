@@ -19,6 +19,20 @@ public class PawnAnimation : MonoBehaviour
         //cameraAnimator.GetComponent<cameraAnimator>(); -> dont need this because we have public Animator
     }
 
+    void Update()
+    {
+        //ALL THE TRIGGERS SHOULD BE UPDATED LATER, THESE KEY INPUT IS ONLY FOR TESTING
+        if (Input.GetKeyDown(testStraight))
+        {
+            pawnAnimator.SetTrigger(moveStraight);
+        }
+        if (Input.GetKeyDown(testAttackL))
+        {
+            pawnAnimator.SetTrigger(moveDiagonalL);
+        }
+        if (Input.GetKeyDown(testAttackR))
+        {
+            pawnAnimator.SetTrigger(moveDiagonalR);
         }
         if (Input.GetKeyDown(testAttacked))
         {

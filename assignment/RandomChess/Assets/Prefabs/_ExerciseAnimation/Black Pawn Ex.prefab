@@ -220,9 +220,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2376376714222331101}
   - component: {fileID: 2429989712754155969}
+  - component: {fileID: 8504315602467193714}
   m_Layer: 0
   m_Name: Black Pawn Ex
-  m_TagString: Untagged
+  m_TagString: chessPieces
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -262,6 +263,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &8504315602467193714
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2372822175036513673}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.1918199, y: 2.5898771, z: 1.0311232}
+  m_Center: {x: -0.09590995, y: 0.79493856, z: 0.015561581}
 --- !u!1 &2372892218989688293
 GameObject:
   m_ObjectHideFlags: 0
