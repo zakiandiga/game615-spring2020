@@ -4,51 +4,92 @@ using UnityEngine;
 
 public class InputController : MonoBehaviour
 {
+    
     Transform selectedPiece;
+    Transform selectedSquare;
+
+    // Start is called before the first frame update
     void Start()
     {
-        
+
     }
+
+    void selectSquare(Transform square)
+    {
+        deselectSquare();
+        selectedSquare = square;
+        selectedSquare.GetComponent<MeshRenderer>().material.color = new Color(1, 0, 0, 0.3f);
+
+    }
+
+    void deselectSquare()
+    {
+        if (selectedSquare)  //if this function exist
+        {
+            selectedSquare.GetComponent<MeshRenderer>().material.color = new Color(0, 0, 0, 0.0f);
+        }
+        //selectedSquare = null;
+    }
+
+    void selectPiece(Transform piece)
+    {
+        deselectPiece();
+        selectedPiece = piece;
+
+        Renderer[] renderers = selectedPiece.GetComponentsInChildren<Renderer>();
+        foreach (Renderer r in renderers)
+        {
+            r.material.EnableKeyword("_EMISSION");
+            r.material.SetColor("_EmissionColor", Color.red);
+        }
+    }
+
+    void deselectPiece()
+    {
+        if (selectedPiece)
+        {
+            Renderer[] renderers = selectedPiece.GetComponentsInChildren<Renderer>();
+            foreach (Renderer r in renderers)
+            {
+                r.material.DisableKeyword("_EMISSION");
+                r.material.SetColor("_EmissionColor", Color.black);
+            }
+        }
+        selectedPiece = null;
+    }
+
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, 100))
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, 100))
+            if (hit.transform.tag == "square" && selectedPiece)
             {
-                if (hit.transform.tag == "square")
-                {
-                    Renderer[] renderers = selectedPiece.transform.GetComponentsInChildren<Renderer>(); //collection of object value variable
 
-                    hit.transform.GetComponent<MeshRenderer>().material.color = new Color(1, 0, 0, 0.4f);
-                    if (selectedPiece) //shortcut to (selectedPiece != null)
-                    {
-                        selectedPiece.position = hit.transform.position;
-                        selectedPiece.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
-                        selectedPiece = null;
-                        
-                    }
-                }
-                if (hit.transform.tag == "chessPieces")
+                selectSquare(hit.transform);
+                if (Input.GetMouseButtonDown(0))
                 {
-                    Renderer[] renderers = hit.transform.GetComponentsInChildren<Renderer>(); //collection of object value variable
-                    selectedPiece = hit.transform;
-
-                    foreach (Renderer r in renderers)
-                    {
-                        r.material.SetColor("_EmissionColor", new Color(1, 0, 0));
-                        r.material.EnableKeyword("_EMISSION");
-                    }
-                    //hit.transform.GetComponentsInChildren<Renderer>().material.SetColor("_EmissionColor", new Color(1, 0, 0)); //color = new Color(1, 0, 0);
-                    //hit.transform.GetComponentsInChildren<Renderer>().material.EnableKeyword("_EMISSION");
-                    //Debug.Log("Last Line");
+                    selectedPiece.position = hit.transform.position;
+                    deselectPiece();
                 }
+
             }
-            
+
+            if (Input.GetMouseButtonDown(0) && hit.transform.tag == "chessPieces")
+            {
+                selectPiece(hit.transform);
+
+            }
         }
+
+
     }
+
+
 }
