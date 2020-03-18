@@ -4,22 +4,15 @@ using UnityEngine;
 
 public class InputController : MonoBehaviour
 {
-    
+    string playerColor = "White";
     Transform selectedPiece;
     Transform selectedSquare;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
 
     void selectSquare(Transform square)
     {
         deselectSquare();
         selectedSquare = square;
-        selectedSquare.GetComponent<MeshRenderer>().material.color = new Color(1, 0, 0, 0.3f);
-
+        highlightValid();
     }
 
     void deselectSquare()
@@ -27,10 +20,20 @@ public class InputController : MonoBehaviour
         if (selectedSquare)  //if this function exist
         {
             selectedSquare.GetComponent<MeshRenderer>().material.color = new Color(0, 0, 0, 0.0f);
+            selectedSquare = null;
         }
         //selectedSquare = null;
     }
 
+    void highlightValid()
+    {
+        selectedSquare.GetComponent<MeshRenderer>().material.color = new Color(0, 1, 0, 0.3f);
+    }
+
+    void highlightInvalid()
+    {
+        selectedSquare.GetComponent<MeshRenderer>().material.color = new Color(1, 0, 0, 0.3f);
+    }
     void selectPiece(Transform piece)
     {
         deselectPiece();
@@ -40,7 +43,7 @@ public class InputController : MonoBehaviour
         foreach (Renderer r in renderers)
         {
             r.material.EnableKeyword("_EMISSION");
-            r.material.SetColor("_EmissionColor", Color.red);
+            r.material.SetColor("_EmissionColor", new Color(0, 0.5f, 0, 0.2f));
         }
     }
 
@@ -58,6 +61,16 @@ public class InputController : MonoBehaviour
         selectedPiece = null;
     }
 
+    void movePiece()
+    {
+        if (selectedPiece && selectedSquare)
+        {
+            selectedPiece.position = selectedSquare.position;
+            selectedSquare.GetComponent<SquareInfo>().piece = selectedPiece;
+            selectedPiece.parent.GetComponent<SquareInfo>().piece = null;
+            selectedPiece.parent = selectedSquare;
+        }
+    }
 
     // Update is called once per frame
     void Update()
@@ -66,24 +79,34 @@ public class InputController : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
         RaycastHit hit;
+        List<string> layers = new List<string>();
+        layers.Add("Square");
+        layers.Add(playerColor);
 
-        if (Physics.Raycast(ray, out hit, 100))
+        if (GameState.playersTurn && Physics.Raycast(ray, out hit, 100, LayerMask.GetMask(layers.ToArray())))
         {
             if (hit.transform.tag == "square" && selectedPiece)
             {
 
                 selectSquare(hit.transform);
-                if (Input.GetMouseButtonDown(0))
+                if (GameState.isValidMove(selectedPiece, selectedSquare))
                 {
-                    selectedPiece.position = hit.transform.position;
-                    deselectPiece();
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        movePiece();
+                        deselectPiece();
+                    }
                 }
-
+                else
+                {
+                    highlightInvalid();
+                }       
             }
 
-            if (Input.GetMouseButtonDown(0) && hit.transform.tag == "chessPieces")
+            if (Input.GetMouseButtonDown(0) && hit.transform.tag == "chessPieces" && hit.transform.name.Contains(playerColor))
             {
                 selectPiece(hit.transform);
+                deselectSquare();
 
             }
         }

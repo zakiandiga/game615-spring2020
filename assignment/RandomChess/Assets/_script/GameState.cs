@@ -4,11 +4,135 @@ using UnityEngine;
 
 public class GameState : MonoBehaviour
 {
+    string playerColor = "White";
+    public static bool playersTurn = true;
     public static Transform[,] chessboard = new Transform [8,8];
     public GameObject baseCube;
     public Transform boardParent;
     public Transform chessPiece;
     const int SQUARE_SIZE = 2;
+
+    static bool isPathEmpty(Transform piece, Transform square, float maxDistance)
+    {
+        RaycastHit hit;
+        Debug.DrawRay(piece.position + Vector3.up, (square.position - piece.position).normalized * maxDistance, Color.red);
+
+        List<string> layers = new List<string>();
+        layers.Add("White");
+        layers.Add("Black");
+
+        if (Physics.Raycast(piece.position + Vector3.up, (square.position - piece.position), out hit, maxDistance, LayerMask.GetMask(layers.ToArray())))
+        {
+            return false;
+
+        }
+        return true;
+    }
+
+
+    public static bool isValidMove(Transform piece, Transform square) // given piece and square, the function checks if piece can move to the square
+    {
+        if (!piece || !square) return false; // if there is no piece or no square, move is impossible. This should never happen, but better save then sorry!
+
+        SquareInfo origin = piece.parent.GetComponent<SquareInfo>();
+        SquareInfo destination = square.GetComponent<SquareInfo>();
+
+        float maxDistance = Vector3.Distance(square.position, piece.position) - SQUARE_SIZE;
+
+        //float maxDistance = Mathf.Pow((origin.j - destination.j), 2) + Mathf.Pow((origin.i - destination.i),2); // Check the class code for this distance calculation
+
+        Debug.Log(maxDistance);
+        if (piece.name.Contains("White")) // validate moves for whites
+        {
+            if (piece.name.Contains("Pawn"))
+            {
+                if (((origin.i + 1 == destination.i && origin.j == destination.j) && (!destination.piece)) ||
+                    ((origin.i + 1 == destination.i && origin.j + 1 == destination.j) && (destination.piece.name.Contains("Black"))) ||
+                    ((origin.i + 1 == destination.i && origin.j - 1 == destination.j) && (destination.piece.name.Contains("Black"))))
+                {
+                    return true;
+                }
+                else return false;
+            }
+
+
+            if (piece.name.Contains("King"))
+            {
+                if (((origin.i + 1 == destination.i && origin.j == destination.j) ||
+                        (origin.i + 1 == destination.i && origin.j + 1 == destination.j) ||
+                        (origin.i + 1 == destination.i && origin.j - 1 == destination.j) ||
+                        (origin.i - 1 == destination.i && origin.j == destination.j) ||
+                        (origin.i - 1 == destination.i && origin.j + 1 == destination.j) ||
+                        (origin.i - 1 == destination.i && origin.j - 1 == destination.j) ||
+                        (origin.i == destination.i && origin.j + 1 == destination.j) ||
+                        (origin.i == destination.i && origin.j - 1 == destination.j))
+                    // replace that with conditions 
+                    &&
+                    (!destination.piece || destination.piece.name.Contains("Black")))
+                {
+                    return true;
+                }
+                else return false;
+            }
+
+            if (piece.name.Contains("Queen"))
+            {
+                if (((origin.i == destination.i) && (origin.j != destination.j)) ||
+                    ((origin.j == destination.j) && (origin.i != destination.i)) ||
+                    ((destination.j - origin.j == destination.i - origin.i)) ||
+                    ((origin.j - destination.j == destination.i - origin.i))//This is the condition for Bishop also)
+                    &&
+                    isPathEmpty(piece, square, maxDistance)
+                    &&
+                    (!destination.piece || destination.piece.name.Contains("Black")))
+                {
+                    return true;
+                }
+                else return false;
+            }
+
+            if (piece.name.Contains("Rook"))
+            {
+                if (((origin.i == destination.i) && (origin.j != destination.j)) ||
+                    ((origin.j == destination.j) && (origin.i != destination.i))
+                    &&
+                    (!destination.piece || destination.piece.name.Contains("Black")))
+                {
+                    return true;
+                }
+                else return false;
+            }
+
+            if (piece.name.Contains("Bishop"))
+            {
+                if (((destination.j - origin.j == destination.i - origin.i)) ||
+                    ((origin.j - destination.j == destination.i - origin.i))
+                    &&
+                    (!destination.piece || destination.piece.name.Contains("Black")))
+                {
+                    return true;
+                }
+                else return false;
+            }
+
+            if (piece.name.Contains("Horse"))
+            {
+                if ((origin.i - 1 == destination.i && origin.j + 2 == destination.j) ||
+                    (origin.i + 1 == destination.i && origin.j + 2 == destination.j) ||
+                    (origin.i - 1 == destination.i && origin.j - 2 == destination.j) ||
+                    (origin.i + 1 == destination.i && origin.j - 2 == destination.j) ||
+                    (origin.i - 2 == destination.i && origin.j - 1 == destination.j) ||
+                    (origin.i - 2 == destination.i && origin.j + 1 == destination.j) ||
+                    (origin.i + 2 == destination.i && origin.j - 1 == destination.j) ||
+                    (origin.i + 2 == destination.i && origin.j + 1 == destination.j))
+                {
+                    return true;
+                }
+                else return false;
+            }
+        }
+        return false;
+    }
 
     void Start()
     {
@@ -28,17 +152,17 @@ public class GameState : MonoBehaviour
                     if (Vector3.Distance(chessPiece.GetChild(k).position, square.transform.position) < SQUARE_SIZE/2)
                     {
                         square.GetComponent<SquareInfo>().piece = chessPiece.GetChild(k);
+                        chessPiece.GetChild(k).parent = square.transform;
                     }
                 }
                 square.GetComponent<MeshRenderer>().material.color = new Color(1, 0, 0, 0.0f);
-
-
                 chessboard[i, j] = square.transform;
             }
-        }    
+        }
+        Destroy(baseCube);
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         
