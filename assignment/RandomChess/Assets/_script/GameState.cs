@@ -11,6 +11,8 @@ public class GameState : MonoBehaviour
     public Transform boardParent;
     public Transform chessPiece;
     const int SQUARE_SIZE = 2;
+    List<Transform> activeWhitePiece = new List<Transform>();
+    List<string> activeWhitePiecesNames = new List<string>();
 
     static bool isPathEmpty(Transform piece, Transform square, float maxDistance)
     {
@@ -23,6 +25,7 @@ public class GameState : MonoBehaviour
 
         if (Physics.Raycast(piece.position + Vector3.up, (square.position - piece.position), out hit, maxDistance, LayerMask.GetMask(layers.ToArray())))
         {
+            Debug.Log("GameState: Hey, dude! The path toward the destination is occupied! You can't move over other pieces unless you are a knight! GameState 27");
             return false;
 
         }
@@ -46,9 +49,11 @@ public class GameState : MonoBehaviour
         {
             if (piece.name.Contains("Pawn"))
             {
-                if (((origin.i + 1 == destination.i && origin.j == destination.j) && (!destination.piece)) ||
-                    ((origin.i + 1 == destination.i && origin.j + 1 == destination.j) && (destination.piece.name.Contains("Black"))) ||
-                    ((origin.i + 1 == destination.i && origin.j - 1 == destination.j) && (destination.piece.name.Contains("Black"))))
+
+                if (((origin.j + 1 == destination.j && origin.i == destination.i) && !destination.piece) ||
+                    ((origin.j + 2 == destination.j && origin.i == destination.i) && !destination.piece && origin.j == 1 && isPathEmpty(piece, square, maxDistance)) ||
+                    ((origin.j + 1 == destination.j && origin.i + 1 == destination.i) && destination.piece && destination.piece.name.Contains("Black")) ||
+                    ((origin.j + 1 == destination.j && origin.i - 1 == destination.i) && destination.piece && (destination.piece.name.Contains("Black"))))
                 {
                     return true;
                 }
@@ -117,7 +122,7 @@ public class GameState : MonoBehaviour
 
             if (piece.name.Contains("Horse"))
             {
-                if ((origin.i - 1 == destination.i && origin.j + 2 == destination.j) ||
+                if (((origin.i - 1 == destination.i && origin.j + 2 == destination.j) ||
                     (origin.i + 1 == destination.i && origin.j + 2 == destination.j) ||
                     (origin.i - 1 == destination.i && origin.j - 2 == destination.j) ||
                     (origin.i + 1 == destination.i && origin.j - 2 == destination.j) ||
@@ -125,6 +130,7 @@ public class GameState : MonoBehaviour
                     (origin.i - 2 == destination.i && origin.j + 1 == destination.j) ||
                     (origin.i + 2 == destination.i && origin.j - 1 == destination.j) ||
                     (origin.i + 2 == destination.i && origin.j + 1 == destination.j))
+                    && (!destination.piece || destination.piece.name.Contains("Black")))
                 {
                     return true;
                 }
@@ -160,6 +166,22 @@ public class GameState : MonoBehaviour
             }
         }
         Destroy(baseCube);
+/*
+        foreach (chessPiece t in allPieces)
+        {
+            if (t.name.Contains("White"))
+            {
+                activeWhitePiece.add(piece);
+                activeWhitePieceNames.add(t.gameObject.name);       
+            }
+        }
+
+        string name = activeWhitePiecesNames[Random.Range(0, activeWhitePieces.Count)];
+
+        activeWhitePieces[3].gameObject.name = name;
+
+        activeWhitePiecesNames.remove(name);
+        */
     }
 
 

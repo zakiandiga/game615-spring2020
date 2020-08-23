@@ -22,7 +22,6 @@ public class InputController : MonoBehaviour
             selectedSquare.GetComponent<MeshRenderer>().material.color = new Color(0, 0, 0, 0.0f);
             selectedSquare = null;
         }
-        //selectedSquare = null;
     }
 
     void highlightValid()
@@ -34,6 +33,7 @@ public class InputController : MonoBehaviour
     {
         selectedSquare.GetComponent<MeshRenderer>().material.color = new Color(1, 0, 0, 0.3f);
     }
+
     void selectPiece(Transform piece)
     {
         deselectPiece();
@@ -69,6 +69,7 @@ public class InputController : MonoBehaviour
             selectedSquare.GetComponent<SquareInfo>().piece = selectedPiece;
             selectedPiece.parent.GetComponent<SquareInfo>().piece = null;
             selectedPiece.parent = selectedSquare;
+            GameState.playersTurn = false;
         }
     }
 
@@ -80,7 +81,7 @@ public class InputController : MonoBehaviour
 
         RaycastHit hit;
         List<string> layers = new List<string>();
-        layers.Add("Square");
+        layers.Add("square");
         layers.Add(playerColor);
 
         if (GameState.playersTurn && Physics.Raycast(ray, out hit, 100, LayerMask.GetMask(layers.ToArray())))
@@ -103,11 +104,11 @@ public class InputController : MonoBehaviour
                 }       
             }
 
-            if (Input.GetMouseButtonDown(0) && hit.transform.tag == "chessPieces" && hit.transform.name.Contains(playerColor))
+            if (Input.GetMouseButtonDown(0) && hit.transform.tag == "chesspieces" && hit.transform.name.Contains(playerColor)) // if we clicked on our piece 
             {
-                selectPiece(hit.transform);
+                selectPiece(hit.transform); // then we select that piece
+                Debug.Log("Mouseclicked on chess pieces");
                 deselectSquare();
-
             }
         }
 

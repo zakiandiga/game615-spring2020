@@ -43,7 +43,7 @@ public class PlayerControll : MonoBehaviour
 
         float alpha = Mathf.Acos(cosAlpha);
 
-        transform.rotation = Quaternion.Euler(0, 0, alpha*Mathf.Rad2Deg);
+        transform.rotation = Quaternion.Euler(0, 0, alpha); //*Mathf.Rad2Deg
 
         if (Input.GetKey(Fire) && piggy.transform.parent && gameManager.shotAttempt > 0) 
         {
